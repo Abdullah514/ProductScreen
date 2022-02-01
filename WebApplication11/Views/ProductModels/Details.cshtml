@@ -1,0 +1,63 @@
+﻿@model WebApplication11.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@*<h1 style="background-color:forestgreen; text-align:center;font-family:Times New Roman; color:white ">Product Detail</h1>
+    <a class="btn btn-primary" asp-action="Index">Home</a>
+</div>*@
+
+ 
+    <a class="col-sm-2 btn justify-content-end " style="pbackground-color white;
+  color: black; border: 2px solid #4CAF50; border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
+0 6px 20px 0 rgba(0,0,0,0.19); " asp-controller="ProductModels" asp-action="Index" >Home</a>
+    </div>
+
+<div class="row justify-content-center">
+ <div class="col-sm-5" style="background-color:whitesmoke; border-color:white; border-style: solid; border: 2px solid white;
+  border-radius: 10px" > 
+ <div class="row" style="align-content:center; padding: 0px 0px 5px 0px ">
+
+  <img src="@Url.Content("~/Uploads/" +Model.ProfilePicture)" alt="Error" width="200" height="600">
+        </div>
+ </div>    
+
+ <div class="col-sm-3" style="background-color:whitesmoke; border-color:white; border-style: solid; border: 2px solid white;
+  border-radius: 10px" >
+
+         <div class="row justify-content-center" style="font-family:Times New Roman; font-size: 25px;font-weight: bold; padding-bottom: 30px ">
+        @Html.DisplayFor(model => model.ProductName)
+       </div>
+       
+      
+      
+    
+        <div class="row justify-content-center" style="font-family:Times New Roman; font-size: 14px; text-align:center " >
+           Per Month amount 
+           <br>
+           <div>$@Html.DisplayFor(modelItem => Model.ProductPrice)
+        </div>
+           </div>  
+    <div style="font-family:Times New Roman; font-size: 14px;font-weight: bold;">
+         <div class="row justify-content-center" >
+             <div class="col-sm-6">
+    <a class="btn btn-light" style="pbackground-color white;
+  color: black; border: 2px solid #4CAF50; border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
+0 6px 20px 0 rgba(0,0,0,0.19); " asp-controller="ProductModels" asp-action="" asp-route-id="@Model.Id">Add to Chart</a>
+
+    
+            </div>
+        </div>
+       </div>
+    </div>
+   
+   
+
+       
+
+    </div>
+
+    
+</div>
+   
