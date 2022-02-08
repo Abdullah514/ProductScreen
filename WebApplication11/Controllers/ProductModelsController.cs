@@ -20,16 +20,13 @@ namespace WebApplication11.Controllers
         public ProductModelsController(DatabaseContaxt context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
-            // db = context;
+     
             webHostEnvironment = hostEnvironment;
             
         }
 
 
-        //public ProductModelsController(DatabaseContaxt context)
-        //{
-        //    _context = context;
-        //}
+      
 
         // GET: ProductModels
         public async Task<IActionResult> Index()
@@ -38,7 +35,7 @@ namespace WebApplication11.Controllers
         }
 
 
-        // Waseem Code
+        
 
 
         public IActionResult Create()
@@ -82,7 +79,7 @@ namespace WebApplication11.Controllers
                      //   CreatedOn = DateTime.Now
                     };
 
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    using (var fileStream = new FileStream(filePath, FileMode.Create)) //temporry arry binary
                     {
                         files.CopyTo(fileStream);
                     }

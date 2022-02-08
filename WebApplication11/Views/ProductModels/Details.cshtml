@@ -4,60 +4,62 @@
     ViewData["Title"] = "Details";
 }
 
-@*<h1 style="background-color:forestgreen; text-align:center;font-family:Times New Roman; color:white ">Product Detail</h1>
-    <a class="btn btn-primary" asp-action="Index">Home</a>
-</div>*@
+ <div class="container-fluid ">
+     <div class="row justify-content-center">
+         <div class="col-sm-6"  > 
+             <H1 class="text-white text-center mt-5 mb-3">@Html.DisplayFor(model => model.ProductName)</H1>
+             <div class="row img-fluid" >
+                 <img src="@Url.Content("~/Uploads/" +Model.ProfilePicture)" alt="Error"/>
+                 
+             </div>
+             
+         </div>
 
- 
-    <a class="col-sm-2 btn justify-content-end " style="pbackground-color white;
-  color: black; border: 2px solid #4CAF50; border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
-0 6px 20px 0 rgba(0,0,0,0.19); " asp-controller="ProductModels" asp-action="Index" >Home</a>
-    </div>
+         <div class="col-sm-5 bg-dark mt-5 p-5 border border-3 border-light rounded h-50 ">
+             <ul class="list-unstyled">
+                 <li>
+                     <div class="row text-success fw-bold fs-3 mt-5 mb-2"  >
+                         <i class="bi bi-check-circle">
+                             In Stock
+                             
+                         </i>
+                         
+                     </div>
+                     
+                 </li>
+                 <li>
+                     <div class= "fs-5 ms-4 mt-2 mb-2 ">
+                         <strong>Order by 9pm for FREE next day Delivery!</strong>
+                         
+                     </div>
+                 </li>
+                 <li>
+                     <div class="col-sm-12 fw-bold fs-5">
+                         <i class="bi bi-truck me-2"></i>
+                         FREE delivery to you
+                         <i class="text-info bi bi-info-circle-fill"></i>
+                     </div>
+                 </li>
+                 <li>
+                     <div class="text-center text-info  display-4  fw-bold mt-5 mb-3" >
+                         $@Html.DisplayFor(modelItem => Model.ProductPrice)
+                     </div>
+                 </li>
+                 <li>
+                     <div class=" row justify-content-center" >
+                         <a class="col-sm-8 btn btn-success fs-3 " asp-controller="ProductModels" asp-action="" asp-route-id="@Model.Id">
+                             <i class="bi bi-cart3"></i>
+                             Add to Cart</a>
+                     </div>
+                     
+                 </li>
+                 
+             </ul>
+             
+         </div>
+         
+     </div>
+     
+ </div>
 
-<div class="row justify-content-center">
- <div class="col-sm-5" style="background-color:whitesmoke; border-color:white; border-style: solid; border: 2px solid white;
-  border-radius: 10px" > 
- <div class="row" style="align-content:center; padding: 0px 0px 5px 0px ">
-
-  <img src="@Url.Content("~/Uploads/" +Model.ProfilePicture)" alt="Error" width="200" height="600">
-        </div>
- </div>    
-
- <div class="col-sm-3" style="background-color:whitesmoke; border-color:white; border-style: solid; border: 2px solid white;
-  border-radius: 10px" >
-
-         <div class="row justify-content-center" style="font-family:Times New Roman; font-size: 25px;font-weight: bold; padding-bottom: 30px ">
-        @Html.DisplayFor(model => model.ProductName)
-       </div>
-       
-      
-      
-    
-        <div class="row justify-content-center" style="font-family:Times New Roman; font-size: 14px; text-align:center " >
-           Per Month amount 
-           <br>
-           <div>$@Html.DisplayFor(modelItem => Model.ProductPrice)
-        </div>
-           </div>  
-    <div style="font-family:Times New Roman; font-size: 14px;font-weight: bold;">
-         <div class="row justify-content-center" >
-             <div class="col-sm-6">
-    <a class="btn btn-light" style="pbackground-color white;
-  color: black; border: 2px solid #4CAF50; border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
-0 6px 20px 0 rgba(0,0,0,0.19); " asp-controller="ProductModels" asp-action="" asp-route-id="@Model.Id">Add to Chart</a>
-
-    
-            </div>
-        </div>
-       </div>
-    </div>
-   
-   
-
-       
-
-    </div>
-
-    
-</div>
    
