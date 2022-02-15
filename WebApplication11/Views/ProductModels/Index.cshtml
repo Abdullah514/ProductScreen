@@ -4,23 +4,21 @@
 }
 
 <h1 class="text-light bg-dark text-center">Product Screen</h1>
-<div class="row justify-content-end" > 
-    <a class="col-sm-2 btn btn-primary mt-3 mb-5 me-2"   asp-action="Create" >Add New</a>
-</div>
 <div class="container">
     <div class="row mt-10 justify-content-center">
-        @foreach (var item in Model) {
-            <div class="col-sm-4"  >
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4">
                 <div class="row justify-content-center text-light fs-3 m-3 fw-bold badge bg-Dark">
                     @Html.DisplayFor(modelItem => item.ProductName)
-                    
+
                 </div>
                 <div class="row justify-content-center pb-2">
-                    <img  src="@Url.Content("~/Uploads/" +item.ProfilePicture)" alt="Error" class="img-fluid" >
-                    
+                    <img src="@Url.Content("~/Uploads/" +item.ProfilePicture)" alt="Error" class="img-fluid">
+
                 </div>
                 <hr>
-                <div class="row justify-content-center display-7 m-7" >
+                <div class="row justify-content-center display-7 m-7">
                     <strong class="text-center">
                         From
                         <br>
@@ -28,29 +26,29 @@
                         <br>
                         Per Month
                     </strong>
-                    
-                </div>  
+
+                </div>
                 <div>
                     <div class="row justify-content-center">
                         <a class="col-sm-10 btn btn-primary"
-                        asp-controller="ProductModels"
-                        asp-action="Details"
-                        asp-route-id="@item.Id">Details</a>
+                       asp-controller="ProductModels"
+                       asp-action="Details"
+                       asp-route-id="@item.Id">Details</a>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         }
-        
+
     </div>
-    
+
 </div>
 
- @*             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+@*             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
 
 
 

@@ -10,7 +10,7 @@ using WebApplication11.Data;
 namespace WebApplication11.Migrations
 {
     [DbContext(typeof(DatabaseContaxt))]
-    [Migration("20220128051747_InitData")]
+    [Migration("20220209053305_InitData")]
     partial class InitData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,23 @@ namespace WebApplication11.Migrations
                 .HasAnnotation("ProductVersion", "6.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("WebApplication11.Models.CartData", b =>
+                {
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartId");
+
+                    b.ToTable("Carts");
+                });
+
             modelBuilder.Entity("WebApplication11.Models.ProductModel", b =>
                 {
                     b.Property<int>("Id")
@@ -27,12 +44,14 @@ namespace WebApplication11.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ProductName")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<decimal>("ProductPrice")
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("ProfilePicture")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");

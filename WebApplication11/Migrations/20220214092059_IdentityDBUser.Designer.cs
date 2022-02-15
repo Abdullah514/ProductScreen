@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication11.Data;
 
@@ -10,9 +11,10 @@ using WebApplication11.Data;
 namespace WebApplication11.Migrations
 {
     [DbContext(typeof(DatabaseContaxt))]
-    partial class DatabaseContaxtModelSnapshot : ModelSnapshot
+    [Migration("20220214092059_IdentityDBUser")]
+    partial class IdentityDBUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

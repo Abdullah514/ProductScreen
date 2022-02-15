@@ -2,16 +2,6 @@
 
 namespace WebApplication11.ViewModels
 {
-    //public class ProductViewModel : EditImageViewModel
-    //{
-    //    [Required]
-    //    [Display(Name = "Name")]
-    //    public string ProductName { get; set; }
-    //    [Required]        
-    //    public decimal ProductPrice { get; set; }
-    //    [Required]
-    //    public string Venue { get; set; }
-    //}
 
 
     public class ProductViewModel : EditImageViewModel  

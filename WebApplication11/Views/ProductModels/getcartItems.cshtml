@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplication11.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<table class="p-3">
+    @foreach (var item in Model)
+    {
+        <tbody class=" m-5 p-3">
+            <tr>
+                <td class="col-sm-3">
+                    <img src="@Url.Content("~/Uploads/" +item.ProfilePicture)" class="img-fluid w-25" alt="Error" />
+                </td>
+                <td class="col-sm-5">
+                    <div class="fs-3 me-5">
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </div>
+                </td>
+                <td class="col-sm-4 fs-2">
+
+                    $@Html.DisplayFor(modelItem => item.ProductPrice)
+                <td>
+            </tr>
+          
+        </tbody>
+
+
+
+
+
+        @*  <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>*@
+
+    }
+</table>

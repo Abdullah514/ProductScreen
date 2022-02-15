@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebApplication11.Data;
 using WebApplication11.Models;
@@ -9,10 +10,13 @@ var connectionString = builder.Configuration.GetConnectionString("Authentication
 builder.Services.AddDbContext<DatabaseContaxt>(options =>
     options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 28))));
 
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DatabaseContaxt>();
+
+
 //builder.Services.AddDefaultIdentity<appiUser>(
 //    options => options.SignIn.RequireConfirmedAccount = true
-  //  )
-   //.AddEntityFrameworkStores<DatabaseContaxt>();
+//  )
+//.AddEntityFrameworkStores<DatabaseContaxt>();
 
 
 
@@ -34,6 +38,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

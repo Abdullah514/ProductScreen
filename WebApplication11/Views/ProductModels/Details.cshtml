@@ -3,63 +3,76 @@
 @{
     ViewData["Title"] = "Details";
 }
+<form  asp-controller="ProductModels" asp-action="DetailsSending" asp-route-id="@Model.Id" >
+    <a class="justify-content-end btn border border-gray border-3" asp-controller="ProductModels" asp-action="getcartItems" asp-route-id="@Model.Id">
+        <i class="bi bi-cart3"></i>
+        Cart
+    </a>
 
- <div class="container-fluid ">
-     <div class="row justify-content-center">
-         <div class="col-sm-6"  > 
-             <H1 class="text-white text-center mt-5 mb-3">@Html.DisplayFor(model => model.ProductName)</H1>
-             <div class="row img-fluid" >
-                 <img src="@Url.Content("~/Uploads/" +Model.ProfilePicture)" alt="Error"/>
-                 
-             </div>
-             
-         </div>
 
-         <div class="col-sm-5 bg-dark mt-5 p-5 border border-3 border-light rounded h-50 ">
-             <ul class="list-unstyled">
-                 <li>
-                     <div class="row text-success fw-bold fs-3 mt-5 mb-2"  >
-                         <i class="bi bi-check-circle">
-                             In Stock
-                             
-                         </i>
-                         
-                     </div>
-                     
-                 </li>
-                 <li>
-                     <div class= "fs-5 ms-4 mt-2 mb-2 ">
-                         <strong>Order by 9pm for FREE next day Delivery!</strong>
-                         
-                     </div>
-                 </li>
-                 <li>
-                     <div class="col-sm-12 fw-bold fs-5">
-                         <i class="bi bi-truck me-2"></i>
-                         FREE delivery to you
-                         <i class="text-info bi bi-info-circle-fill"></i>
-                     </div>
-                 </li>
-                 <li>
-                     <div class="text-center text-info  display-4  fw-bold mt-5 mb-3" >
-                         $@Html.DisplayFor(modelItem => Model.ProductPrice)
-                     </div>
-                 </li>
-                 <li>
-                     <div class=" row justify-content-center" >
-                         <a class="col-sm-8 btn btn-success fs-3 " asp-controller="ProductModels" asp-action="" asp-route-id="@Model.Id">
-                             <i class="bi bi-cart3"></i>
-                             Add to Cart</a>
-                     </div>
-                     
-                 </li>
-                 
-             </ul>
-             
-         </div>
-         
-     </div>
-     
- </div>
+    <div class="container-fluid ">
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
 
-   
+
+                <H1 class="text-white text-center mt-5 mb-3">@Html.DisplayFor(model => model.ProductName)</H1>
+                <div class="row img-fluid">
+                    <img src="@Url.Content("~/Uploads/" +Model.ProfilePicture)" alt="Error" />
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-5 bg-dark mt-5 p-5 border border-3 border-light rounded h-50 ">
+                <ul class="list-unstyled">
+                    <li>
+                        <div class="row text-success fw-bold fs-3 mt-5 mb-2">
+                            <i class="bi bi-check-circle">
+                                In Stock
+                            </i>
+
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="fs-5 ms-4 mt-2 mb-2 ">
+                            <strong>@Html.DisplayFor(modelItem => Model.Description)</strong>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="col-sm-12 fw-bold fs-5">
+                            <i class="bi bi-truck me-2"></i>
+                            FREE delivery to you
+                            <i class="text-info bi bi-info-circle-fill"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text-center text-info  display-4  fw-bold mt-5 mb-3">
+                            $@Html.DisplayFor(modelItem => Model.ProductPrice)
+                            @*<input asp-for="Id" class="form-control" />*@
+
+                        </div>
+                    </li>
+                    <li>
+
+
+                        <div class=" row justify-content-center">
+                            @Html.HiddenFor(modelItem => Model.Id)
+                            <input class="btn border border-3 border-seccess"
+                            type="submit" value="Add to Cart" 
+                            />
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
