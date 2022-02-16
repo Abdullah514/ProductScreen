@@ -24,7 +24,7 @@ namespace WebApplication11.Admin
         {
             return View();
         }
-        fsf
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         // public async Task<IActionResult> Create([Bind("Id,ProductName,ProductPrice,ProfilePicture")] ProductModel productModel)
