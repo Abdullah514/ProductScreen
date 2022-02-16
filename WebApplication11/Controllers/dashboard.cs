@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication11.Data;
 using WebApplication11.Models;
 
@@ -23,6 +24,7 @@ namespace WebApplication11.Admin
         {
             return View();
         }
+        fsf
         [HttpPost]
         [ValidateAntiForgeryToken]
         // public async Task<IActionResult> Create([Bind("Id,ProductName,ProductPrice,ProfilePicture")] ProductModel productModel)
@@ -66,7 +68,7 @@ namespace WebApplication11.Admin
 
                     _context.ProductModels.Add(obj);
                     _context.SaveChanges();
-
+                    ModelState.Clear();
                 }
             }
             return View();
